@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BaloTech Gadget Hub - Gaming</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>BaloTech Gadget Hub</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="iphones.html">iPhones</a>
+      <a href="samsung.html">Samsung</a>
+      <a href="other-phones.html">Other Phones</a>
+      <a href="laptops.html">Laptops</a>
+      <a href="watches.html">Watches</a>
+      <a href="audio.html">Earpods & Headphones</a>
+      <a href="accessories.html">Accessories</a>
+      <a href="gaming.html">Gaming</a>
+      <a href="#cart">Cart <span id="cartCount" class="cart-count">0</span></a>
+      <button id="adminModeToggle" class="admin-toggle" type="button">Admin: OFF</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Gaming Zone</h2>
+    <p>PlayStation consoles, gaming pads, and gaming accessories.</p>
+  </section>
+
+  <div class="page-links">
+    <a href="../index.html">Page 1: Phones</a>
+    <a href="accessories.html">Page 2: Accessories</a>
+    <a href="gaming.html">Page 3: Gaming</a>
+  </div>
+
+  <section class="products">
+    <div class="product" data-name="PlayStation 4 Slim" data-price="350000" data-stock="in">
+      <img src="https://via.placeholder.com/150" alt="PlayStation 4 Slim">
+      <h3>PlayStation 4 Slim</h3>
+      <p>₦350,000</p>
+      <span class="status in">In Stock</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product" data-name="PlayStation 5 Standard" data-price="980000" data-stock="out">
+      <img src="https://via.placeholder.com/150" alt="PlayStation 5 Standard">
+      <h3>PlayStation 5 Standard</h3>
+      <p>₦980,000</p>
+      <span class="status out">Out of Stock</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product" data-name="DualSense PS5 Controller" data-price="120000" data-stock="in">
+      <img src="https://via.placeholder.com/150" alt="DualSense PS5 Controller">
+      <h3>DualSense PS5 Controller</h3>
+      <p>₦120,000</p>
+      <span class="status in">In Stock</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product" data-name="PS4 Wireless Controller" data-price="80000" data-stock="in">
+      <img src="https://via.placeholder.com/150" alt="PS4 Wireless Controller">
+      <h3>PS4 Wireless Controller</h3>
+      <p>₦80,000</p>
+      <span class="status in">In Stock</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product" data-name="Gaming Pad RGB XL" data-price="15000" data-stock="in">
+      <img src="https://via.placeholder.com/150" alt="Gaming Pad RGB XL">
+      <h3>Gaming Pad RGB XL</h3>
+      <p>₦15,000</p>
+      <span class="status in">In Stock</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+    <div class="product" data-name="Gaming Headset 7.1" data-price="55000" data-stock="in">
+      <img src="https://via.placeholder.com/150" alt="Gaming Headset 7.1">
+      <h3>Gaming Headset 7.1</h3>
+      <p>₦55,000</p>
+      <span class="status in">In Stock</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </section>
+
+  <section id="cart" class="cart">
+    <h2>Your Cart</h2>
+    <ul id="cartItems"></ul>
+    <p id="total">Total: ₦0</p>
+    <button class="checkout-btn" onclick="checkout()">Checkout on WhatsApp</button>
+  </section>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="../script.js"></script>
+</body>
+</html>

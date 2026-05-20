@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BaloTech Gadget Hub - Watches</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>BaloTech Gadget Hub</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="iphones.html">iPhones</a>
+      <a href="samsung.html">Samsung</a>
+      <a href="other-phones.html">Other Phones</a>
+      <a href="laptops.html">Laptops</a>
+      <a href="watches.html">Watches</a>
+      <a href="audio.html">Earpods & Headphones</a>
+      <a href="accessories.html">Accessories</a>
+      <a href="gaming.html">Gaming</a>
+      <a href="#cart">Cart <span id="cartCount" class="cart-count">0</span></a>
+      <button id="adminModeToggle" class="admin-toggle" type="button">Admin: OFF</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Smart Watches</h2>
+    <p>Apple Watches and top-selling alternatives in Nigeria.</p>
+  </section>
+
+  <section class="products">
+    <div class="product" data-name="Apple Watch SE 2" data-price="420000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Apple Watch SE 2"><h3>Apple Watch SE 2</h3><p>₦420,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product" data-name="Apple Watch Series 8" data-price="560000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Apple Watch Series 8"><h3>Apple Watch Series 8</h3><p>₦560,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product" data-name="Apple Watch Series 9" data-price="690000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Apple Watch Series 9"><h3>Apple Watch Series 9</h3><p>₦690,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product" data-name="Apple Watch Ultra 2" data-price="1180000" data-stock="out"><img src="https://via.placeholder.com/150" alt="Apple Watch Ultra 2"><h3>Apple Watch Ultra 2</h3><p>₦1,180,000</p><span class="status out">Out of Stock</span><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product" data-name="Samsung Galaxy Watch 6" data-price="430000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy Watch 6"><h3>Samsung Galaxy Watch 6</h3><p>₦430,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product" data-name="Amazfit GTR 4" data-price="220000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Amazfit GTR 4"><h3>Amazfit GTR 4</h3><p>₦220,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product" data-name="Xiaomi Watch 2" data-price="190000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Xiaomi Watch 2"><h3>Xiaomi Watch 2</h3><p>₦190,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
+    <div class="product" data-name="Oraimo Watch 5 Lite" data-price="75000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Oraimo Watch 5 Lite"><h3>Oraimo Watch 5 Lite</h3><p>₦75,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
+  </section>
+
+  <section id="cart" class="cart">
+    <h2>Your Cart</h2>
+    <ul id="cartItems"></ul>
+    <p id="total">Total: ₦0</p>
+    <button class="checkout-btn" onclick="checkout()">Checkout on WhatsApp</button>
+  </section>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="../script.js"></script>
+</body>
+</html>
