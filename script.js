@@ -1,6 +1,41 @@
 const STORAGE_KEY = "balotech-cart";
 const STOCK_KEY = "balotech-stock";
 const ADMIN_MODE_KEY = "balotech-admin-mode";
+
+const PRODUCT_IMAGES = {
+  "iphone x": "WhatsApp Image 2026-05-22 at 2.40.24 AM.jpeg",
+  "iphone xr": "WhatsApp Image 2026-05-22 at 2.40.30 AM.jpeg",
+  "iphone xs-max": "WhatsApp Image 2026-05-22 at 2.40.23 AM.jpeg",
+  "iphone 11": "WhatsApp Image 2026-05-22 at 2.40.31 AM.jpeg",
+  "iphone 11 pro": "WhatsApp Image 2026-05-22 at 2.40.23 AM.jpeg",
+  "iphone 11 pro max": "WhatsApp Image 2026-05-22 at 2.40.23 AM.jpeg",
+  "iphone 12": "WhatsApp Image 2026-05-22 at 2.40.34 AM.jpeg",
+  "iphone 12 mini": "WhatsApp Image 2026-05-22 at 2.40.34 AM.jpeg",
+  "iphone 12 pro": "WhatsApp Image 2026-05-22 at 2.40.23 AM.jpeg",
+  "iphone 12 pro max": "WhatsApp Image 2026-05-22 at 2.40.31 AM.jpeg",
+  "iphone 13": "WhatsApp Image 2026-05-22 at 2.40.24 AM.jpeg",
+  "iphone 13 mini": "WhatsApp Image 2026-05-22 at 2.40.24 AM.jpeg",
+  "iphone 13 pro": "WhatsApp Image 2026-05-22 at 2.40.23 AM.jpeg",
+  "iphone 13 pro max": "WhatsApp Image 2026-05-22 at 2.40.23 AM.jpeg",
+  "iphone 14": "WhatsApp Image 2026-05-22 at 2.40.30 AM.jpeg",
+  "iphone 14 plus": "WhatsApp Image 2026-05-22 at 2.40.30 AM.jpeg",
+  "iphone 14 pro": "WhatsApp Image 2026-05-22 at 2.40.32 AM.jpeg",
+  "iphone 14 pro max": "WhatsApp Image 2026-05-22 at 2.40.23 AM.jpeg",
+  "iphone 15": "WhatsApp Image 2026-05-22 at 2.40.24 AM.jpeg",
+  "iphone 15 plus": "WhatsApp Image 2026-05-22 at 2.40.27 AM.jpeg",
+  "iphone 15 pro": "WhatsApp Image 2026-05-22 at 2.40.32 AM.jpeg",
+  "iphone 15 pro max": "WhatsApp Image 2026-05-22 at 2.40.23 AM.jpeg",
+  "iphone 16": "WhatsApp Image 2026-05-22 at 2.36.18 AM.jpeg",
+  "iphone 16 plus": "WhatsApp Image 2026-05-22 at 2.40.27 AM.jpeg",
+  "iphone 16 pro": "WhatsApp Image 2026-05-22 at 2.40.23 AM.jpeg",
+  "iphone 16 pro max": "WhatsApp Image 2026-05-22 at 2.36.18 AM.jpeg",
+  "iphone 17": "WhatsApp Image 2026-05-22 at 2.40.27 AM.jpeg",
+  "iphone 17 plus": "WhatsApp Image 2026-05-22 at 2.40.27 AM.jpeg",
+  "iphone 17 pro": "WhatsApp Image 2026-05-22 at 2.40.23 AM.jpeg",
+  "iphone 17 pro max": "WhatsApp Image 2026-05-22 at 2.36.17 AM.jpeg",
+  "infinix note 40": "WhatsApp Image 2026-05-22 at 2.40.20 AM.jpeg",
+};
+
 let cart = loadCart();
 let stockOverrides = loadStockOverrides();
 let adminMode = loadAdminMode();
@@ -43,39 +78,34 @@ function formatPrice(value) {
   return new Intl.NumberFormat("en-NG").format(value);
 }
 
-function getImageKeyword(productName) {
-  const name = productName.toLowerCase();
-  if (name.includes("iphone")) return `${productName} phone`;
-  if (name.includes("samsung")) return `${productName} phone`;
-  if (name.includes("redmi") || name.includes("infinix") || name.includes("tecno") || name.includes("itel")) {
-    return `${productName} smartphone`;
-  }
-  if (name.includes("macbook")) return `${productName} laptop`;
-  if (name.includes("lenovo") || name.includes("dell") || name.includes("hp")) return `${productName} laptop`;
-  if (name.includes("watch")) return `${productName} smartwatch`;
-  if (name.includes("airpods") || name.includes("earbuds")) return `${productName} earbuds`;
-  if (name.includes("headphone") || name.includes("sony") || name.includes("jbl") || name.includes("soundcore")) {
-    return `${productName} headphones`;
-  }
-  if (name.includes("power bank")) return `${productName} power bank`;
-  if (name.includes("playstation") || name.includes("controller") || name.includes("gaming")) return `${productName} gaming`;
-  return productName;
+function getImagesBase() {
+  return window.location.pathname.includes("/pages/") ? "../Images/" : "Images/";
 }
 
-// function applyProductImages() {
-//   document.querySelectorAll(".product").forEach((product) => {
-//     const name = product.dataset.name || "";
-//     const image = product.querySelector("img");
-//     if (!image) return;
+function imageUrl(filename) {
+  return getImagesBase() + encodeURIComponent(filename);
+}
 
-//     const isPlaceholder = image.src.includes("via.placeholder.com");
-//     if (!isPlaceholder) return;
+function applyLocalProductImages() {
+  document.querySelectorAll(".product").forEach((product) => {
+    const name = (product.dataset.name || "").toLowerCase();
+    const image = product.querySelector("img");
+    const filename = PRODUCT_IMAGES[name];
+    if (!image || !filename) return;
 
-//     const keyword = getImageKeyword(name);
-//     image.src = `https://source.unsplash.com/300x300/?${encodeURIComponent(keyword)}`;
-//     image.loading = "lazy";
-//   });
-// }
+    const isPlaceholder =
+      !image.dataset.localImage &&
+      (image.src.includes("via.placeholder.com") || image.src.includes("placeholder"));
+    if (isPlaceholder || image.dataset.localImage === "pending") {
+      image.src = imageUrl(filename);
+      image.dataset.localImage = "true";
+      image.loading = "lazy";
+      image.onerror = () => {
+        image.alt = `${product.dataset.name} (image unavailable)`;
+      };
+    }
+  });
+}
 
 function showToast(message) {
   const toast = document.getElementById("toast");
@@ -98,12 +128,12 @@ function addToCart(button) {
   const price = Number(product.dataset.price);
   if (!name || Number.isNaN(price)) return;
 
+  const condition = product.dataset.condition || "";
   const existing = cart.find((item) => item.name === name);
   if (existing) {
     existing.qty += 1;
   } else {
-    const condition = product.dataset.condition || '';
-cart.push({ name, price, qty: 1, condition });
+    cart.push({ name, price, qty: 1, condition });
   }
 
   saveCart();
@@ -128,7 +158,8 @@ function displayCart() {
     li.className = "cart-item";
 
     const text = document.createElement("span");
-    text.textContent = `${item.name} x${item.qty} - ₦${formatPrice(itemTotal)}`;
+    const conditionNote = item.condition ? ` (${item.condition})` : "";
+    text.textContent = `${item.name} x${item.qty} - ₦${formatPrice(itemTotal)}${conditionNote}`;
 
     const removeButton = document.createElement("button");
     removeButton.className = "remove-btn";
@@ -168,21 +199,21 @@ function checkout() {
     return;
   }
 
-  let message = "Hello, I want to place an order from your gadget catalog:\n";
+  let message = "Hello, I want to place an order from BaloTech Gadget Hub:\n";
   let total = 0;
 
   cart.forEach((item) => {
     const lineTotal = item.price * item.qty;
-    message += `- ${item.name} x${item.qty} (₦${formatPrice(lineTotal)})\n`;
+    const conditionText = item.condition ? ` — ${item.condition}` : "";
+    message += `- ${item.name} x${item.qty} (₦${formatPrice(lineTotal)})${conditionText}\n`;
     total += lineTotal;
   });
 
- message += `- ${item.name} x${item.qty} (₦${formatPrice(lineTotal)}) — ${item.condition || 'New'}\nPlease confirm availability and delivery details.`;
+  message += `\nTotal: ₦${formatPrice(total)}\n\nPlease confirm availability and delivery details.`;
 
-  const phoneNumber = "08157742329"; // replace with your real business number
+  const phoneNumber = "2348157742329";
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-  window.location.href = url;
+  window.open(url, "_blank");
 }
 
 function getProductStock(product) {
@@ -257,6 +288,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   refreshAdminControls();
-  applyProductImages();
+  applyLocalProductImages();
   displayCart();
 });
