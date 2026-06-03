@@ -32,19 +32,27 @@ body {
   color: var(--text);
   line-height: 1.5;
 }
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  padding: 14px 20px;
-  background: var(--header-grad);
+  padding: 14px 24px;
+  background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+  background-size: 200% 200%;
+  animation: headerShift 8s ease infinite;
   color: white;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 24px rgba(30, 27, 75, 0.35);
+  box-shadow: 0 4px 30px rgba(79, 70, 229, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@keyframes headerShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 header h1 {
@@ -52,6 +60,10 @@ header h1 {
   font-size: 1.15rem;
   font-weight: 800;
   letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #ffffff, #fde047, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 nav {
@@ -63,20 +75,28 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 600;
-  transition: background 0.2s ease, transform 0.2s ease;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+  position: relative;
 }
 
 nav a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fde047;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+nav a:active {
+  transform: translateY(0);
+}
 .admin-toggle {
   border: none;
   border-radius: 999px;
@@ -116,7 +136,7 @@ nav a:hover {
 .hero {
   text-align: center;
   padding: 48px 24px;
-  background: var(--hero-grad);
+   background: linear-gradient(to right, #b465da, #cf6cc9, #ee609c);
   color: white;
   position: relative;
   overflow: hidden;
@@ -197,7 +217,41 @@ nav a:hover {
   margin: 0;
   color: var(--muted);
 }
+.thumbnails {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  justify-content: center;
+}
 
+.thumbnails img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  opacity: 0.6;
+}
+
+.thumbnails img:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.thumbnails img.active {
+  border-color: var(--primary);
+  opacity: 1;
+}
+
+.main-image {
+  transition: opacity 0.3s ease;
+}
+
+.main-image.fade {
+  opacity: 0;
+}
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -238,7 +292,8 @@ nav a:hover {
   color: var(--primary);
 }
 
-.product img {
+.product .main-image,
+.product > img {
   border-radius: 12px;
   width: 100%;
   max-width: 180px;
@@ -246,11 +301,14 @@ nav a:hover {
   object-fit: cover;
   background: #f1f5f9;
   transition: transform 0.3s ease;
+  cursor: zoom-in;
 }
 
-.product:hover img {
+.product:hover .main-image,
+.product:hover > img {
   transform: scale(1.03);
 }
+
 
 .product .status {
   display: inline-block;
@@ -412,6 +470,106 @@ button:disabled {
 .toast.show {
   opacity: 1;
   transform: translateY(0);
+}
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 75vh;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.lightbox-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 0;
+  box-shadow: none;
+  transition: background 0.2s ease;
+}
+
+.lightbox-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: none;
+  transform: none;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-top: 0;
+  box-shadow: none;
+  line-height: 1;
+  padding: 8px;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: none;
+  box-shadow: none;
+}
+
+.lightbox-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lightbox-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  border: none;
+  margin-top: 0;
+  padding: 0;
+  box-shadow: none;
+  min-width: unset;
+  transition: background 0.2s ease;
+}
+
+.lightbox-dot.active {
+  background: white;
+}
+
+.lightbox-dot:hover {
+  transform: none;
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 768px) {

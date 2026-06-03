@@ -89,7 +89,7 @@ function imageUrl(filename) {
 function applyLocalProductImages() {
   document.querySelectorAll(".product").forEach((product) => {
     const name = (product.dataset.name || "").toLowerCase();
-    const image = product.querySelector("img");
+    const image = product.querySelector(".main-image"); product.querySelector(":not(.thumbnails) > img");
     const filename = PRODUCT_IMAGES[name];
     if (!image || !filename) return;
 
@@ -255,8 +255,110 @@ function refreshAdminControls() {
     adminToggle.classList.toggle("active", adminMode);
   }
 }
-
 document.addEventListener("DOMContentLoaded", () => {
+  // Bug 1 (lines ~167-195): thumbnail code was duplicated and nested 
+  // inside the product forEach loop — moved it outside and cleaned to one copy
+  document.querySelectorAll(".thumbnails img").forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      const product = thumb.closest(".product");
+      const mainImage = product.querySelector(".main-image");
+
+      mainImage.classList.add("fade");
+
+      setTimeout(() => {
+        mainImage.src = thumb.src;
+        mainImage.classList.remove("fade");
+      }, 300);
+
+      product.querySelectorAll(".thumbnails img").forEach(t => t.classList.remove("active"));
+      thumb.classList.add("active");
+    });
+  });
+// Lightbox viewer
+let lightboxImages = [];
+let lightboxIndex = 0;
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxDots = document.getElementById("lightboxDots");
+const lightboxClose = document.getElementById("lightboxClose");
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
+
+function openLightbox(images, startIndex) {
+  lightboxImages = images;
+  lightboxIndex = startIndex;
+  updateLightbox();
+  lightbox.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function updateLightbox() {
+  lightboxImg.src = lightboxImages[lightboxIndex];
+  lightboxDots.innerHTML = "";
+  lightboxImages.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.className = "lightbox-dot" + (i === lightboxIndex ? " active" : "");
+    dot.addEventListener("click", () => {
+      lightboxIndex = i;
+      updateLightbox();
+    });
+    lightboxDots.appendChild(dot);
+  });
+}
+
+if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+
+if (lightboxPrev) lightboxPrev.addEventListener("click", () => {
+  lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+  updateLightbox();
+});
+
+if (lightboxNext) lightboxNext.addEventListener("click", () => {
+  lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+  updateLightbox();
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (!lightbox.classList.contains("open")) return;
+  if (e.key === "ArrowLeft") {
+    lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+    updateLightbox();
+  }
+  if (e.key === "ArrowRight") {
+    lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+    updateLightbox();
+  }
+  if (e.key === "Escape") closeLightbox();
+});
+
+// attach click to open lightbox on main images
+document.querySelectorAll(".product").forEach(product => {
+  const mainImg = product.querySelector(".main-image") || product.querySelector("img");
+  if (!mainImg) return;
+
+  mainImg.addEventListener("click", () => {
+    const thumbs = product.querySelectorAll(".thumbnails img");
+    const images = thumbs.length > 0
+      ? Array.from(thumbs).map(t => t.src)
+      : [mainImg.src];
+
+    const currentSrc = mainImg.src;
+    const startIndex = Math.max(images.findIndex(src => src === currentSrc), 0);
+    openLightbox(images, startIndex);
+  });
+});
+  // Bug 2 (line ~167): product forEach was wrapping the thumbnail code
+  // — stock toggle logic now runs cleanly on its own
   document.querySelectorAll(".product").forEach((product) => {
     const button = product.querySelector(".add-to-cart");
     if (!button) return;
@@ -291,3 +393,4 @@ document.addEventListener("DOMContentLoaded", () => {
   applyLocalProductImages();
   displayCart();
 });
+   
