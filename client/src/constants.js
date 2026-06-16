@@ -1,5 +1,7 @@
+export const HOME_PATH = "/";
+
 export const CATEGORIES = [
-  { id: "hot-deals", label: "Hot Deals", path: "/" },
+  { id: "hot-deals", label: "Hot Deals", path: HOME_PATH, home: true },
   { id: "iphones", label: "iPhones", path: "/iphones" },
   { id: "samsung", label: "Samsung", path: "/samsung" },
   { id: "other-phones", label: "Other Phones", path: "/other-phones" },

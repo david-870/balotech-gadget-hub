@@ -6,8 +6,8 @@
     "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
     "dev:client": "npm run dev --prefix client",
     "dev:server": "npm run dev --prefix server",
-    "build": "npm run build --prefix client",
-    "build:render": "node scripts/prepare-render-build.js && npm install --prefix client && npm run build --prefix client && npm install --prefix server",
+    "build": "node scripts/prepare-render-build.js && npm install --prefix client --include=dev && npm run build --prefix client && npm install --prefix server --omit=dev",
+    "build:render": "npm run build",
     "start": "npm run start --prefix server",
     "seed": "npm run seed --prefix server"
   },

@@ -30,6 +30,10 @@ export default function ProductCard({ product }) {
     showToast(`${product.name} added to cart`);
   };
 
+  const switchImage = (index) => {
+    setActiveImage(index);
+  };
+
   const openGallery = () => {
     if (!images.length) return;
     setLightboxOpen(true);
@@ -38,37 +42,34 @@ export default function ProductCard({ product }) {
   return (
     <>
       <div className={`product ${outOfStock ? "out-of-stock" : ""}`}>
-        <div className="product-media">
-          {hasGallery && (
-            <span className="photo-count-badge">{images.length} photos</span>
-          )}
-          <img
-            className={hasGallery ? "main-image" : ""}
-            src={imageSrc(mainImage)}
-            alt={product.name}
-            loading="lazy"
-            onClick={openGallery}
-          />
-          {hasGallery && (
-            <div className="thumbnails">
-              {images.map((img, i) => (
-                <img
-                  key={`${img}-${i}`}
-                  src={imageSrc(img)}
-                  alt={`${product.name} angle ${i + 1}`}
-                  className={i === activeImage ? "active" : ""}
-                  onClick={() => setActiveImage(i)}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-        <h3>{product.name}</h3>
-        <p>₦{formatPrice(product.price)}</p>
-        {product.condition && <p className="condition">{product.condition}</p>}
-        {hasGallery && (
-          <p className="gallery-hint">Tap photos to view all angles</p>
+        {images.length > 0 && (
+          <div className="product-gallery">
+            <img
+              className="main-image"
+              src={imageSrc(mainImage)}
+              alt={product.name}
+              loading="lazy"
+              onClick={openGallery}
+            />
+            {hasGallery && (
+              <div className="thumbnails">
+                {images.map((img, i) => (
+                  <img
+                    key={`${img}-${i}`}
+                    src={imageSrc(img)}
+                    alt={`${product.name} view ${i + 1}`}
+                    className={i === activeImage ? "active" : ""}
+                    onClick={() => switchImage(i)}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
         )}
+
+        <h3>{product.name}</h3>
+        {product.condition && <p className="condition">{product.condition}</p>}
+        <p className="product-price">₦{formatPrice(product.price)}</p>
         <span className={`status ${outOfStock ? "out" : "in"}`}>
           {outOfStock ? "Out of Stock" : "In Stock"}
         </span>

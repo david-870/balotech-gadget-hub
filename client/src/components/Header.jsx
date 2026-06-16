@@ -8,10 +8,15 @@ export default function Header() {
   return (
     <header>
       <h1>
-        <Link to="/">BaloTech Gadget Hub</Link>
+        <Link to={CATEGORIES.find((c) => c.home)?.path || "/"}>
+          BaloTech Gadget Hub
+        </Link>
       </h1>
       <nav>
-        {CATEGORIES.filter((c) => c.id !== "hot-deals").map((cat) => (
+        <NavLink to={CATEGORIES.find((c) => c.home)?.path || "/"} end>
+          Home
+        </NavLink>
+        {CATEGORIES.filter((c) => !c.home).map((cat) => (
           <NavLink key={cat.id} to={cat.path}>
             {cat.label}
           </NavLink>

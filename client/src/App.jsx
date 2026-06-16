@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import CategoryPage from "./pages/CategoryPage";
 import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
-import { CATEGORIES, ADMIN_GATEWAY_PATH } from "./constants";
+import { CATEGORIES, ADMIN_GATEWAY_PATH, HOME_PATH } from "./constants";
 
 export default function App() {
   return (
@@ -13,15 +13,16 @@ export default function App() {
       <Route path="/admin" element={<NotFound />} />
       <Route path="/admin/*" element={<NotFound />} />
       <Route element={<ShopLayout />}>
-        <Route path="/" element={<Home />} />
-        {CATEGORIES.filter((c) => c.id !== "hot-deals").map((cat) => (
+        <Route path={HOME_PATH} element={<Home />} />
+        <Route path="/hot-deals" element={<Home />} />
+        {CATEGORIES.filter((c) => !c.home).map((cat) => (
           <Route
             key={cat.id}
             path={cat.path}
             element={<CategoryPage categoryId={cat.id} />}
           />
         ))}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to={HOME_PATH} replace />} />
       </Route>
     </Routes>
   );
