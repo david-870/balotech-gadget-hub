@@ -20,7 +20,8 @@
       <a href="accessories.html">Accessories</a>
       <a href="gaming.html">Gaming</a>
       <a href="#cart">Cart <span id="cartCount" class="cart-count">0</span></a>
-      <button id="adminModeToggle" class="admin-toggle" type="button">Admin: OFF</button>
+      <a href="../admin.html" class="admin-link-nav">Admin</a>
+      <button id="adminModeToggle" class="admin-toggle" type="button">Quick Stock: OFF</button>
     </nav>
   </header>
 
@@ -29,19 +30,7 @@
     <p>Flagship and mid-range Samsung devices.</p>
   </section>
 
-  <section class="products">
-    <div class="product" data-name="Samsung Galaxy S21" data-price="560000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy S21"><h3>Samsung Galaxy S21</h3><p>₦560,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Samsung Galaxy S22" data-price="640000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy S22"><h3>Samsung Galaxy S22</h3><p>₦640,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Samsung Galaxy S23" data-price="780000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy S23"><h3>Samsung Galaxy S23</h3><p>₦780,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Samsung Galaxy S24" data-price="920000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy S24"><h3>Samsung Galaxy S24</h3><p>₦920,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Samsung Galaxy S24 Ultra" data-price="1500000" data-stock="out"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy S24 Ultra"><h3>Samsung Galaxy S24 Ultra</h3><p>₦1,500,000</p><span class="status out">Out of Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Samsung Galaxy A15" data-price="250000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy A15"><h3>Samsung Galaxy A15</h3><p>₦250,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Samsung Galaxy A25" data-price="310000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy A25"><h3>Samsung Galaxy A25</h3><p>₦310,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Samsung Galaxy A35" data-price="390000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy A35"><h3>Samsung Galaxy A35</h3><p>₦390,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Samsung Galaxy A55" data-price="480000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy A55"><h3>Samsung Galaxy A55</h3><p>₦480,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Samsung Galaxy Z Flip 5" data-price="1250000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy Z Flip 5"><h3>Samsung Galaxy Z Flip 5</h3><p>₦1,250,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Samsung Galaxy Z Fold 5" data-price="1900000" data-stock="out"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy Z Fold 5"><h3>Samsung Galaxy Z Fold 5</h3><p>₦1,900,000</p><span class="status out">Out of Stock</span><button class="add-to-cart">Add to Cart</button></div>
-  </section>
+  <section class="products" data-catalog="samsung"></section>
 
   <section id="cart" class="cart">
     <h2>Your Cart</h2>
@@ -51,6 +40,7 @@
   </section>
 
   <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="../catalog.js"></script>
   <script src="../script.js"></script>
 </body>
 </html>

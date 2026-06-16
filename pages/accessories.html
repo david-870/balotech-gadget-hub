@@ -20,7 +20,8 @@
       <a href="accessories.html">Accessories</a>
       <a href="gaming.html">Gaming</a>
       <a href="#cart">Cart <span id="cartCount" class="cart-count">0</span></a>
-      <button id="adminModeToggle" class="admin-toggle" type="button">Admin: OFF</button>
+      <a href="../admin.html" class="admin-link-nav">Admin</a>
+      <button id="adminModeToggle" class="admin-toggle" type="button">Quick Stock: OFF</button>
     </nav>
   </header>
 
@@ -35,50 +36,7 @@
     <a href="gaming.html">Page 3: Gaming</a>
   </div>
 
-  <section class="products">
-    <div class="product" data-name="Oraimo Power Bank 10000mAh" data-price="25000" data-stock="in">
-      <img src="https://via.placeholder.com/150" alt="Oraimo Power Bank 10000mAh">
-      <h3>Oraimo Power Bank 10000mAh</h3>
-      <p>₦25,000</p>
-      <span class="status in">In Stock</span>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product" data-name="Anker Power Bank 20000mAh" data-price="65000" data-stock="in">
-      <img src="https://via.placeholder.com/150" alt="Anker Power Bank 20000mAh">
-      <h3>Anker Power Bank 20000mAh</h3>
-      <p>₦65,000</p>
-      <span class="status in">In Stock</span>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product" data-name="Xiaomi Power Bank 30000mAh" data-price="78000" data-stock="out">
-      <img src="https://via.placeholder.com/150" alt="Xiaomi Power Bank 30000mAh">
-      <h3>Xiaomi Power Bank 30000mAh</h3>
-      <p>₦78,000</p>
-      <span class="status out">Out of Stock</span>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product" data-name="Fast Charger 30W USB-C" data-price="18000" data-stock="in">
-      <img src="https://via.placeholder.com/150" alt="Fast Charger 30W USB-C">
-      <h3>Fast Charger 30W USB-C</h3>
-      <p>₦18,000</p>
-      <span class="status in">In Stock</span>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product" data-name="AirPods Pro Compatible Earbuds" data-price="35000" data-stock="in">
-      <img src="https://via.placeholder.com/150" alt="AirPods Pro Compatible Earbuds">
-      <h3>Wireless Earbuds Pro</h3>
-      <p>₦35,000</p>
-      <span class="status in">In Stock</span>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-    <div class="product" data-name="Phone Case (iPhone 12/13)" data-price="8500" data-stock="in">
-      <img src="https://via.placeholder.com/150" alt="Phone Case">
-      <h3>Phone Case (iPhone 12/13)</h3>
-      <p>₦8,500</p>
-      <span class="status in">In Stock</span>
-      <button class="add-to-cart">Add to Cart</button>
-    </div>
-  </section>
+  <section class="products" data-catalog="accessories"></section>
 
   <section id="cart" class="cart">
     <h2>Your Cart</h2>
@@ -88,6 +46,7 @@
   </section>
 
   <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="../catalog.js"></script>
   <script src="../script.js"></script>
 </body>
 </html>

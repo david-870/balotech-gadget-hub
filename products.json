@@ -1,0 +1,964 @@
+{
+  "products": [
+    {
+      "id": "p1",
+      "name": "iPhone 14 Plus",
+      "price": 350000,
+      "stock": "in",
+      "condition": "UK used •locked(Wifi only) • 85% battery health • Perfect condition",
+      "category": "hot-deals",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p2",
+      "name": "Samsung Galaxy S24",
+      "price": 920000,
+      "stock": "in",
+      "condition": "",
+      "category": "hot-deals",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p3",
+      "name": "Redmi Note 13 Pro",
+      "price": 430000,
+      "stock": "in",
+      "condition": "",
+      "category": "hot-deals",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p4",
+      "name": "iPhone 16 pro",
+      "price": 630000,
+      "stock": "in",
+      "condition": "UK used •locked(Wifi only) • 90% battery health • Perfect condition",
+      "category": "hot-deals",
+      "image": "./Images/iphone 16 pro1.jpeg",
+      "images": [
+        "./Images/iphone 16 pro1.jpeg",
+        "./Images/iphone 16 pro2.jpeg",
+        "./Images/iphone 16 pro.jpeg"
+      ]
+    },
+    {
+      "id": "p5",
+      "name": "iphone x",
+      "price": 170000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p6",
+      "name": "iphone xr",
+      "price": 200000,
+      "stock": "in",
+      "condition": "UK used •locked(Wifi only) • 85% battery health • Perfect condition",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p7",
+      "name": "iphone xs-max",
+      "price": 250000,
+      "stock": "in",
+      "condition": "Neatly used • 85% battery health • No scratches",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p8",
+      "name": "iPhone 11",
+      "price": 520000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p9",
+      "name": "iPhone 11 Pro",
+      "price": 620000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p10",
+      "name": "iPhone 11 Pro Max",
+      "price": 700000,
+      "stock": "out",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p11",
+      "name": "iPhone 12",
+      "price": 650000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p12",
+      "name": "iPhone 12 Mini",
+      "price": 610000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p13",
+      "name": "iPhone 12 Pro",
+      "price": 760000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p14",
+      "name": "iPhone 12 Pro Max",
+      "price": 840000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p15",
+      "name": "iPhone 13",
+      "price": 800000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p16",
+      "name": "iPhone 13 Mini",
+      "price": 740000,
+      "stock": "out",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p17",
+      "name": "iPhone 13 Pro",
+      "price": 900000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p18",
+      "name": "iPhone 13 Pro Max",
+      "price": 980000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p19",
+      "name": "iPhone 14",
+      "price": 980000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p20",
+      "name": "iPhone 14 Plus",
+      "price": 1060000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p21",
+      "name": "iPhone 14 Pro",
+      "price": 1180000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p22",
+      "name": "iPhone 14 Pro Max",
+      "price": 1300000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p23",
+      "name": "iPhone 15",
+      "price": 790000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p24",
+      "name": "iPhone 15 Pro",
+      "price": 1450000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p25",
+      "name": "iPhone 15 Pro Max",
+      "price": 1620000,
+      "stock": "out",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p26",
+      "name": "iPhone 16",
+      "price": 1400000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p27",
+      "name": "iPhone 16 Plus",
+      "price": 1490000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p28",
+      "name": "iPhone 16 Pro",
+      "price": 1680000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p29",
+      "name": "iPhone 16 Pro Max",
+      "price": 1850000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p30",
+      "name": "iPhone 17",
+      "price": 1600000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p31",
+      "name": "iPhone 17 Air",
+      "price": 1720000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p32",
+      "name": "iPhone 17 Pro",
+      "price": 1980000,
+      "stock": "in",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p33",
+      "name": "iPhone 17 Pro Max",
+      "price": 2200000,
+      "stock": "out",
+      "condition": "",
+      "category": "iphones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p34",
+      "name": "Samsung Galaxy S21",
+      "price": 560000,
+      "stock": "in",
+      "condition": "",
+      "category": "samsung",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p35",
+      "name": "Samsung Galaxy S22",
+      "price": 640000,
+      "stock": "in",
+      "condition": "",
+      "category": "samsung",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p36",
+      "name": "Samsung Galaxy S23",
+      "price": 780000,
+      "stock": "in",
+      "condition": "",
+      "category": "samsung",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p37",
+      "name": "Samsung Galaxy S24",
+      "price": 920000,
+      "stock": "in",
+      "condition": "",
+      "category": "samsung",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p38",
+      "name": "Samsung Galaxy S24 Ultra",
+      "price": 1500000,
+      "stock": "out",
+      "condition": "",
+      "category": "samsung",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p39",
+      "name": "Samsung Galaxy A15",
+      "price": 250000,
+      "stock": "in",
+      "condition": "",
+      "category": "samsung",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p40",
+      "name": "Samsung Galaxy A25",
+      "price": 310000,
+      "stock": "in",
+      "condition": "",
+      "category": "samsung",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p41",
+      "name": "Samsung Galaxy A35",
+      "price": 390000,
+      "stock": "in",
+      "condition": "",
+      "category": "samsung",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p42",
+      "name": "Samsung Galaxy A55",
+      "price": 480000,
+      "stock": "in",
+      "condition": "",
+      "category": "samsung",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p43",
+      "name": "Samsung Galaxy Z Flip 5",
+      "price": 1250000,
+      "stock": "in",
+      "condition": "",
+      "category": "samsung",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p44",
+      "name": "Samsung Galaxy Z Fold 5",
+      "price": 1900000,
+      "stock": "out",
+      "condition": "",
+      "category": "samsung",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p45",
+      "name": "Redmi Note 13",
+      "price": 320000,
+      "stock": "in",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p46",
+      "name": "Redmi Note 13 Pro",
+      "price": 430000,
+      "stock": "in",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p47",
+      "name": "Redmi 13C",
+      "price": 205000,
+      "stock": "in",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p48",
+      "name": "Infinix Note 40",
+      "price": 330000,
+      "stock": "in",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p49",
+      "name": "Infinix Hot 40 Pro",
+      "price": 260000,
+      "stock": "in",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p50",
+      "name": "Infinix Smart 8",
+      "price": 180000,
+      "stock": "out",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p51",
+      "name": "Tecno Camon 30",
+      "price": 345000,
+      "stock": "in",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p52",
+      "name": "Tecno Spark 20 Pro",
+      "price": 235000,
+      "stock": "in",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p53",
+      "name": "Tecno Pop 8",
+      "price": 160000,
+      "stock": "in",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p54",
+      "name": "itel S23",
+      "price": 185000,
+      "stock": "in",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p55",
+      "name": "itel P55",
+      "price": 170000,
+      "stock": "in",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p56",
+      "name": "itel A70",
+      "price": 135000,
+      "stock": "out",
+      "condition": "",
+      "category": "other-phones",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p57",
+      "name": "HP Pavilion 15",
+      "price": 820000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p58",
+      "name": "HP Envy x360",
+      "price": 1050000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p59",
+      "name": "HP Spectre x360",
+      "price": 1650000,
+      "stock": "out",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p60",
+      "name": "HP Victus 15",
+      "price": 980000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p61",
+      "name": "HP EliteBook 840",
+      "price": 890000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p62",
+      "name": "Lenovo IdeaPad 3",
+      "price": 610000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p63",
+      "name": "Lenovo IdeaPad 5",
+      "price": 790000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p64",
+      "name": "Lenovo ThinkPad E14",
+      "price": 950000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p65",
+      "name": "Lenovo ThinkPad X1 Carbon",
+      "price": 1800000,
+      "stock": "out",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p66",
+      "name": "Lenovo Legion 5",
+      "price": 1350000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p67",
+      "name": "Dell Inspiron 15",
+      "price": 760000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p68",
+      "name": "Dell Vostro 3520",
+      "price": 690000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p69",
+      "name": "Dell Latitude 7420",
+      "price": 1140000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p70",
+      "name": "Dell XPS 13",
+      "price": 1750000,
+      "stock": "out",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p71",
+      "name": "Dell G15 Gaming",
+      "price": 1280000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p72",
+      "name": "MacBook Air M1",
+      "price": 1180000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p73",
+      "name": "MacBook Air M2",
+      "price": 1550000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p74",
+      "name": "MacBook Air M3",
+      "price": 1780000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p75",
+      "name": "MacBook Pro 14 M3",
+      "price": 2580000,
+      "stock": "in",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p76",
+      "name": "MacBook Pro 16 M3 Max",
+      "price": 3650000,
+      "stock": "out",
+      "condition": "",
+      "category": "laptops",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p77",
+      "name": "Apple Watch SE 2",
+      "price": 420000,
+      "stock": "in",
+      "condition": "",
+      "category": "watches",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p78",
+      "name": "Apple Watch Series 8",
+      "price": 560000,
+      "stock": "in",
+      "condition": "",
+      "category": "watches",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p79",
+      "name": "Apple Watch Series 9",
+      "price": 690000,
+      "stock": "in",
+      "condition": "",
+      "category": "watches",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p80",
+      "name": "Apple Watch Ultra 2",
+      "price": 1180000,
+      "stock": "out",
+      "condition": "",
+      "category": "watches",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p81",
+      "name": "Samsung Galaxy Watch 6",
+      "price": 430000,
+      "stock": "in",
+      "condition": "",
+      "category": "watches",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p82",
+      "name": "Amazfit GTR 4",
+      "price": 220000,
+      "stock": "in",
+      "condition": "",
+      "category": "watches",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p83",
+      "name": "Xiaomi Watch 2",
+      "price": 190000,
+      "stock": "in",
+      "condition": "",
+      "category": "watches",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p84",
+      "name": "Oraimo Watch 5 Lite",
+      "price": 75000,
+      "stock": "in",
+      "condition": "",
+      "category": "watches",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p85",
+      "name": "Apple AirPods 2",
+      "price": 180000,
+      "stock": "in",
+      "condition": "",
+      "category": "audio",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p86",
+      "name": "Apple AirPods 3",
+      "price": 245000,
+      "stock": "in",
+      "condition": "",
+      "category": "audio",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p87",
+      "name": "Apple AirPods Pro 2",
+      "price": 360000,
+      "stock": "in",
+      "condition": "",
+      "category": "audio",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p88",
+      "name": "Apple AirPods Max",
+      "price": 980000,
+      "stock": "out",
+      "condition": "",
+      "category": "audio",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p89",
+      "name": "Samsung Galaxy Buds 2 Pro",
+      "price": 210000,
+      "stock": "in",
+      "condition": "",
+      "category": "audio",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p90",
+      "name": "Oraimo FreePods 4",
+      "price": 65000,
+      "stock": "in",
+      "condition": "",
+      "category": "audio",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p91",
+      "name": "TECNO Sonic 1 Earbuds",
+      "price": 48000,
+      "stock": "in",
+      "condition": "",
+      "category": "audio",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p92",
+      "name": "Sony WH-1000XM5",
+      "price": 620000,
+      "stock": "in",
+      "condition": "",
+      "category": "audio",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p93",
+      "name": "JBL Tune 770NC",
+      "price": 180000,
+      "stock": "in",
+      "condition": "",
+      "category": "audio",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p94",
+      "name": "Anker Soundcore Q45",
+      "price": 165000,
+      "stock": "in",
+      "condition": "",
+      "category": "audio",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p95",
+      "name": "Oraimo Power Bank 10000mAh",
+      "price": 25000,
+      "stock": "in",
+      "condition": "",
+      "category": "accessories",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p96",
+      "name": "Anker Power Bank 20000mAh",
+      "price": 65000,
+      "stock": "in",
+      "condition": "",
+      "category": "accessories",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p97",
+      "name": "Xiaomi Power Bank 30000mAh",
+      "price": 78000,
+      "stock": "out",
+      "condition": "",
+      "category": "accessories",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p98",
+      "name": "Fast Charger 30W USB-C",
+      "price": 18000,
+      "stock": "in",
+      "condition": "",
+      "category": "accessories",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p99",
+      "name": "AirPods Pro Compatible Earbuds",
+      "price": 35000,
+      "stock": "in",
+      "condition": "",
+      "category": "accessories",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p100",
+      "name": "Phone Case (iPhone 12/13)",
+      "price": 8500,
+      "stock": "in",
+      "condition": "",
+      "category": "accessories",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p101",
+      "name": "PlayStation 4 Slim",
+      "price": 350000,
+      "stock": "in",
+      "condition": "",
+      "category": "gaming",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p102",
+      "name": "PlayStation 5 Standard",
+      "price": 980000,
+      "stock": "out",
+      "condition": "",
+      "category": "gaming",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p103",
+      "name": "DualSense PS5 Controller",
+      "price": 120000,
+      "stock": "in",
+      "condition": "",
+      "category": "gaming",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p104",
+      "name": "PS4 Wireless Controller",
+      "price": 80000,
+      "stock": "in",
+      "condition": "",
+      "category": "gaming",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p105",
+      "name": "Gaming Pad RGB XL",
+      "price": 15000,
+      "stock": "in",
+      "condition": "",
+      "category": "gaming",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": "p106",
+      "name": "Gaming Headset 7.1",
+      "price": 55000,
+      "stock": "in",
+      "condition": "",
+      "category": "gaming",
+      "image": "https://via.placeholder.com/150"
+    }
+  ],
+  "version": 1
+}

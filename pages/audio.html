@@ -20,7 +20,8 @@
       <a href="accessories.html">Accessories</a>
       <a href="gaming.html">Gaming</a>
       <a href="#cart">Cart <span id="cartCount" class="cart-count">0</span></a>
-      <button id="adminModeToggle" class="admin-toggle" type="button">Admin: OFF</button>
+      <a href="../admin.html" class="admin-link-nav">Admin</a>
+      <button id="adminModeToggle" class="admin-toggle" type="button">Quick Stock: OFF</button>
     </nav>
   </header>
 
@@ -29,18 +30,7 @@
     <p>Apple and other popular audio devices in Nigeria.</p>
   </section>
 
-  <section class="products">
-    <div class="product" data-name="Apple AirPods 2" data-price="180000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Apple AirPods 2"><h3>Apple AirPods 2</h3><p>₦180,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Apple AirPods 3" data-price="245000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Apple AirPods 3"><h3>Apple AirPods 3</h3><p>₦245,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Apple AirPods Pro 2" data-price="360000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Apple AirPods Pro 2"><h3>Apple AirPods Pro 2</h3><p>₦360,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Apple AirPods Max" data-price="980000" data-stock="out"><img src="https://via.placeholder.com/150" alt="Apple AirPods Max"><h3>Apple AirPods Max</h3><p>₦980,000</p><span class="status out">Out of Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Samsung Galaxy Buds 2 Pro" data-price="210000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Samsung Galaxy Buds 2 Pro"><h3>Samsung Galaxy Buds 2 Pro</h3><p>₦210,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Oraimo FreePods 4" data-price="65000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Oraimo FreePods 4"><h3>Oraimo FreePods 4</h3><p>₦65,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="TECNO Sonic 1 Earbuds" data-price="48000" data-stock="in"><img src="https://via.placeholder.com/150" alt="TECNO Sonic 1 Earbuds"><h3>TECNO Sonic 1 Earbuds</h3><p>₦48,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Sony WH-1000XM5" data-price="620000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Sony WH-1000XM5"><h3>Sony WH-1000XM5</h3><p>₦620,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="JBL Tune 770NC" data-price="180000" data-stock="in"><img src="https://via.placeholder.com/150" alt="JBL Tune 770NC"><h3>JBL Tune 770NC</h3><p>₦180,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Anker Soundcore Q45" data-price="165000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Anker Soundcore Q45"><h3>Anker Soundcore Q45</h3><p>₦165,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-  </section>
+  <section class="products" data-catalog="audio"></section>
 
   <section id="cart" class="cart">
     <h2>Your Cart</h2>
@@ -50,6 +40,7 @@
   </section>
 
   <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="../catalog.js"></script>
   <script src="../script.js"></script>
 </body>
 </html>

@@ -22,8 +22,9 @@
         <a href="#cart"
           >Cart <span id="cartCount" class="cart-count">0</span></a
         >
+        <a href="admin.html" class="admin-link-nav">Admin</a>
         <button id="adminModeToggle" class="admin-toggle" type="button">
-          Admin: OFF
+          Quick Stock: OFF
         </button>
       </nav>
     </header>
@@ -50,75 +51,7 @@
       <p>Limited stock and fast-selling offers.</p>
     </section>
 
-    <section id="products" class="products">
-      <div
-        class="product"
-        data-name="iPhone 14 Plus"
-        data-price="350000"
-        data-stock="in"
-         data-condition="UK used •locked(Wifi only) • 85% battery health • Perfect condition"
-      >
-        <img
-          src="https://via.placeholder.com/150"
-          alt="iPhone 14 Plus"
-          data-local-image="pending"
-        />
-        <h3>iPhone 14 Plus</h3>
-        <p>₦350, 000</p>
-
-        <p class="condition">
-          UK used •Locked(Wifi only) • 85% battery health • Perfect condition
-        </p>
-        <span class="status in">In Stock</span>
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
-      <div
-        class="product"
-        data-name="Samsung Galaxy S24"
-        data-price="920000"
-        data-stock="in"
-      > 
-        <img src="https://via.placeholder.com/150" alt="Samsung Galaxy S24" />
-        <h3>Samsung Galaxy S24</h3>
-        <p>₦920,000</p>
-        <span class="status in">In Stock</span>
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
-      <div
-        class="product"
-        data-name="Redmi Note 13 Pro"
-        data-price="430000"
-        data-stock="in"
-      >
-        <img src="https://via.placeholder.com/150" alt="Redmi Note 13 Pro" />
-        <h3>Redmi Note 13 Pro</h3>
-        <p>₦430,000</p>
-        <span class="status in">In Stock</span>
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
-      <div
-        class="product"
-        data-name="iPhone 16 pro"
-        data-price="630000"
-        data-stock="in"
-        data-condition="UK used •locked(Wifi only) • 90% battery health • Perfect condition"
-      >
-        <img
-          class="main-image" src="./Images/iphone 16 pro1.jpeg" alt="iPhone 16 pro"/>
-        <div class="thumbnails">
-          <img src="./Images/iphone 16 pro1.jpeg" alt="front view" class="active" />
-          <img src="./Images/iphone 16 pro2.jpeg" alt="back view" />
-          <img src="./Images/iphone 16 pro.jpeg" alt="battery status" />
-        </div>
-        <h3>iPhone 16 pro</h3>
-        <p class="condition">
-          UK used •Locked(Wifi only) • 90% battery health • Perfect condition
-        </p>
-        <p>₦630,000</p>
-        <span class="status in">In Stock</span>
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
-    </section>
+    <section id="products" class="products" data-catalog="hot-deals"></section>
 
     <section id="cart" class="cart">
       <h2>Your Cart</h2>
@@ -144,6 +77,7 @@
     <button class="lightbox-btn" id="lightboxNext">→</button>
   </div>
 </div>
+    <script src="catalog.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

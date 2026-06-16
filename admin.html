@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>BaloTech Admin</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin-body">
+  <div id="loginScreen" class="admin-login">
+    <div class="admin-login-card">
+      <h1>BaloTech Admin</h1>
+      <p>Manage your product catalogue from your phone.</p>
+      <form id="loginForm">
+        <label for="adminPin">Admin PIN</label>
+        <input id="adminPin" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Enter PIN" required />
+        <button type="submit" class="admin-btn primary">Sign In</button>
+      </form>
+      <p class="admin-hint">Default PIN: last 7 digits of your shop WhatsApp number.</p>
+      <a href="index.html" class="admin-link">← Back to shop</a>
+    </div>
+  </div>
+
+  <div id="adminApp" class="admin-app hidden">
+    <header class="admin-header">
+      <div>
+        <h1>Catalogue Admin</h1>
+        <p id="productCount">0 products</p>
+      </div>
+      <button id="logoutBtn" class="admin-btn ghost" type="button">Logout</button>
+    </header>
+
+    <div class="admin-toolbar">
+      <input id="searchInput" type="search" placeholder="Search products..." />
+      <select id="categoryFilter">
+        <option value="">All categories</option>
+      </select>
+      <button id="addProductBtn" class="admin-btn primary" type="button">+ Add Product</button>
+    </div>
+
+    <div class="admin-actions">
+      <button id="publishBtn" class="admin-btn success" type="button">Publish Changes</button>
+      <button id="exportBtn" class="admin-btn" type="button">Export JSON</button>
+      <label class="admin-btn import-label">
+        Import JSON
+        <input id="importInput" type="file" accept="application/json" hidden />
+      </label>
+      <button id="changePinBtn" class="admin-btn ghost" type="button">Change PIN</button>
+    </div>
+
+    <div id="productList" class="admin-product-list"></div>
+  </div>
+
+  <div id="editModal" class="admin-modal hidden" role="dialog" aria-modal="true">
+    <div class="admin-modal-backdrop"></div>
+    <div class="admin-modal-sheet">
+      <div class="admin-modal-header">
+        <h2 id="editTitle">Edit Product</h2>
+        <button id="closeModalBtn" class="admin-icon-btn" type="button" aria-label="Close">✕</button>
+      </div>
+      <form id="editForm" class="admin-form">
+        <input type="hidden" id="editId" />
+        <label>
+          Product name
+          <input id="editName" type="text" required />
+        </label>
+        <label>
+          Price (₦)
+          <input id="editPrice" type="number" min="0" step="1000" required />
+        </label>
+        <label>
+          Condition
+          <textarea id="editCondition" rows="2" placeholder="e.g. UK used • 85% battery • Perfect condition"></textarea>
+        </label>
+        <label>
+          Category
+          <select id="editCategory" required></select>
+        </label>
+        <label>
+          Stock status
+          <select id="editStock">
+            <option value="in">In Stock</option>
+            <option value="out">Out of Stock</option>
+          </select>
+        </label>
+        <div class="admin-image-section">
+          <label>Product image</label>
+          <div id="imagePreview" class="admin-image-preview"></div>
+          <div class="admin-image-actions">
+            <label class="admin-btn">
+              📷 Take Photo
+              <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden />
+            </label>
+            <label class="admin-btn">
+              🖼 Choose Image
+              <input id="galleryInput" type="file" accept="image/*" hidden />
+            </label>
+          </div>
+        </div>
+        <div class="admin-form-actions">
+          <button type="button" id="deleteProductBtn" class="admin-btn danger hidden">Delete (Sold)</button>
+          <button type="submit" class="admin-btn primary">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="adminToast" class="toast" aria-live="polite"></div>
+
+  <script src="catalog.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

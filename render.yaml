@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: balotech-gadget-hub
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build:render
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_PIN
+        value: "7742329"
+      - key: ADMIN_GATEWAY_PATH
+        value: balotech-vault-x9k2
+      - key: ADMIN_GATEWAY_SECRET
+        generateValue: true
+      - key: VITE_ADMIN_GATEWAY_PATH
+        value: balotech-vault-x9k2
+      - key: VITE_ADMIN_GATEWAY_SECRET
+        generateValue: true

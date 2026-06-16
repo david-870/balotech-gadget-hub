@@ -20,7 +20,8 @@
       <a href="accessories.html">Accessories</a>
       <a href="gaming.html">Gaming</a>
       <a href="#cart">Cart <span id="cartCount" class="cart-count">0</span></a>
-      <button id="adminModeToggle" class="admin-toggle" type="button">Admin: OFF</button>
+      <a href="../admin.html" class="admin-link-nav">Admin</a>
+      <button id="adminModeToggle" class="admin-toggle" type="button">Quick Stock: OFF</button>
     </nav>
   </header>
 
@@ -29,20 +30,7 @@
     <p>Redmi, Infinix, itel and Tecno best-sellers.</p>
   </section>
 
-  <section class="products">
-    <div class="product" data-name="Redmi Note 13" data-price="320000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Redmi Note 13"><h3>Redmi Note 13</h3><p>₦320,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Redmi Note 13 Pro" data-price="430000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Redmi Note 13 Pro"><h3>Redmi Note 13 Pro</h3><p>₦430,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Redmi 13C" data-price="205000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Redmi 13C"><h3>Redmi 13C</h3><p>₦205,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Infinix Note 40" data-price="330000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Infinix Note 40"><h3>Infinix Note 40</h3><p>₦330,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Infinix Hot 40 Pro" data-price="260000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Infinix Hot 40 Pro"><h3>Infinix Hot 40 Pro</h3><p>₦260,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Infinix Smart 8" data-price="180000" data-stock="out"><img src="https://via.placeholder.com/150" alt="Infinix Smart 8"><h3>Infinix Smart 8</h3><p>₦180,000</p><span class="status out">Out of Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Tecno Camon 30" data-price="345000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Tecno Camon 30"><h3>Tecno Camon 30</h3><p>₦345,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Tecno Spark 20 Pro" data-price="235000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Tecno Spark 20 Pro"><h3>Tecno Spark 20 Pro</h3><p>₦235,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="Tecno Pop 8" data-price="160000" data-stock="in"><img src="https://via.placeholder.com/150" alt="Tecno Pop 8"><h3>Tecno Pop 8</h3><p>₦160,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="itel S23" data-price="185000" data-stock="in"><img src="https://via.placeholder.com/150" alt="itel S23"><h3>itel S23</h3><p>₦185,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="itel P55" data-price="170000" data-stock="in"><img src="https://via.placeholder.com/150" alt="itel P55"><h3>itel P55</h3><p>₦170,000</p><span class="status in">In Stock</span><button class="add-to-cart">Add to Cart</button></div>
-    <div class="product" data-name="itel A70" data-price="135000" data-stock="out"><img src="https://via.placeholder.com/150" alt="itel A70"><h3>itel A70</h3><p>₦135,000</p><span class="status out">Out of Stock</span><button class="add-to-cart">Add to Cart</button></div>
-  </section>
+  <section class="products" data-catalog="other-phones"></section>
 
   <section id="cart" class="cart">
     <h2>Your Cart</h2>
@@ -52,6 +40,7 @@
   </section>
 
   <div id="toast" class="toast" aria-live="polite"></div>
+  <script src="../catalog.js"></script>
   <script src="../script.js"></script>
 </body>
 </html>
