@@ -227,18 +227,55 @@ nav a:active {
   display: flex;
   gap: 6px;
   margin-top: 8px;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.thumbnails::-webkit-scrollbar {
+  display: none;
 }
 
 .thumbnails img {
   width: 45px;
   height: 45px;
+  flex: 0 0 auto;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
   border: 2px solid transparent;
   transition: border-color 0.2s ease, transform 0.2s ease;
   opacity: 0.6;
+}
+
+.product-media {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-count-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  background: rgba(15, 23, 42, 0.75);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.gallery-hint {
+  margin: 4px 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
 }
 
 .thumbnails img:hover {
@@ -1034,10 +1071,85 @@ button:disabled {
   object-fit: cover;
 }
 
-.admin-image-preview:empty::after {
-  content: "No image selected";
+.admin-image-preview.empty {
+  min-height: 120px;
+  display: grid;
+  place-items: center;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+.admin-photo-count {
+  display: block;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.admin-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.admin-image-tile {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f1f5f9;
+  aspect-ratio: 1;
+}
+
+.admin-image-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-cover-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: var(--primary);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+.admin-image-tile-actions {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: grid;
+  gap: 4px;
+  padding: 6px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+.admin-tile-btn {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--text);
+  margin-top: 0;
+  box-shadow: none;
+}
+
+.admin-tile-btn.danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.admin-btn.disabled {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .admin-image-actions {

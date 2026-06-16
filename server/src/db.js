@@ -27,6 +27,8 @@ export function rowToProduct(row) {
   if (!Array.isArray(images)) {
     images = images ? [images] : [];
   }
+  if (!images.length && row.image) images = [row.image];
+  images = [...new Set(images.filter(Boolean))];
   return {
     id: row.id,
     name: row.name,
@@ -34,7 +36,7 @@ export function rowToProduct(row) {
     condition: row.condition || "",
     category: row.category,
     stock: row.stock || "in",
-    image: row.image || "",
+    image: images[0] || row.image || "",
     images,
     createdAt: row.createdAt,
     updatedAt: row.updatedAt,
@@ -59,6 +61,9 @@ export async function getProductById(id) {
 export async function createProduct(data) {
   await db.read();
   const now = new Date().toISOString();
+  let images = Array.isArray(data.images) ? data.images.filter(Boolean) : [];
+  if (!images.length && data.image) images = [data.image];
+  images = [...new Set(images)];
   const product = {
     id: db.data.nextId++,
     name: data.name,
@@ -66,8 +71,8 @@ export async function createProduct(data) {
     condition: data.condition || "",
     category: data.category,
     stock: data.stock || "in",
-    image: data.image || "",
-    images: data.images || [],
+    image: images[0] || "",
+    images,
     createdAt: now,
     updatedAt: now,
   };
@@ -82,6 +87,14 @@ export async function updateProduct(id, data) {
   if (index === -1) return null;
 
   const existing = db.data.products[index];
+  let images =
+    data.images !== undefined
+      ? (Array.isArray(data.images) ? data.images.filter(Boolean) : [])
+      : (Array.isArray(existing.images) ? existing.images : []);
+  if (!images.length && (data.image ?? existing.image)) {
+    images = [data.image ?? existing.image];
+  }
+  images = [...new Set(images)];
   const updated = {
     ...existing,
     name: data.name ?? existing.name,
@@ -89,8 +102,8 @@ export async function updateProduct(id, data) {
     condition: data.condition ?? existing.condition,
     category: data.category ?? existing.category,
     stock: data.stock ?? existing.stock,
-    image: data.image ?? existing.image,
-    images: data.images ?? existing.images,
+    image: images[0] || "",
+    images,
     updatedAt: new Date().toISOString(),
   };
   db.data.products[index] = updated;

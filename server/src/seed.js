@@ -86,7 +86,7 @@ export async function seedIfEmpty() {
       category: p.category,
       stock: p.stock || "in",
       image: image || images[0] || "",
-      images: images.length > 1 ? images : images,
+      images,
     });
   }
 

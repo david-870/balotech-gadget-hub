@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { imageSrc, formatPrice } from "../api/client";
 import { useCart } from "../context/CartContext";
 import { useToast } from "../context/ToastContext";
 import Lightbox from "./Lightbox";
+
+function getProductImages(product) {
+  let images = product.images?.length ? product.images : product.image ? [product.image] : [];
+  images = [...new Set(images.filter(Boolean))];
+  return images;
+}
 
 export default function ProductCard({ product }) {
   const { addItem } = useCart();
@@ -10,14 +16,10 @@ export default function ProductCard({ product }) {
   const [activeImage, setActiveImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
-  const images =
-    product.images?.length > 0
-      ? product.images
-      : product.image
-        ? [product.image]
-        : [];
-  const mainImage = images[activeImage] || product.image;
+  const images = useMemo(() => getProductImages(product), [product]);
+  const mainImage = images[activeImage] || images[0];
   const outOfStock = product.stock === "out";
+  const hasGallery = images.length > 1;
 
   const handleAdd = () => {
     if (outOfStock) {
@@ -28,41 +30,45 @@ export default function ProductCard({ product }) {
     showToast(`${product.name} added to cart`);
   };
 
+  const openGallery = () => {
+    if (!images.length) return;
+    setLightboxOpen(true);
+  };
+
   return (
     <>
       <div className={`product ${outOfStock ? "out-of-stock" : ""}`}>
-        {images.length > 1 ? (
-          <>
-            <img
-              className="main-image"
-              src={imageSrc(mainImage)}
-              alt={product.name}
-              loading="lazy"
-              onClick={() => setLightboxOpen(true)}
-            />
+        <div className="product-media">
+          {hasGallery && (
+            <span className="photo-count-badge">{images.length} photos</span>
+          )}
+          <img
+            className={hasGallery ? "main-image" : ""}
+            src={imageSrc(mainImage)}
+            alt={product.name}
+            loading="lazy"
+            onClick={openGallery}
+          />
+          {hasGallery && (
             <div className="thumbnails">
               {images.map((img, i) => (
                 <img
-                  key={i}
+                  key={`${img}-${i}`}
                   src={imageSrc(img)}
-                  alt={`${product.name} view ${i + 1}`}
+                  alt={`${product.name} angle ${i + 1}`}
                   className={i === activeImage ? "active" : ""}
                   onClick={() => setActiveImage(i)}
                 />
               ))}
             </div>
-          </>
-        ) : (
-          <img
-            src={imageSrc(mainImage)}
-            alt={product.name}
-            loading="lazy"
-            onClick={() => images.length && setLightboxOpen(true)}
-          />
-        )}
+          )}
+        </div>
         <h3>{product.name}</h3>
         <p>₦{formatPrice(product.price)}</p>
         {product.condition && <p className="condition">{product.condition}</p>}
+        {hasGallery && (
+          <p className="gallery-hint">Tap photos to view all angles</p>
+        )}
         <span className={`status ${outOfStock ? "out" : "in"}`}>
           {outOfStock ? "Out of Stock" : "In Stock"}
         </span>
